@@ -2,7 +2,11 @@
 import Header from "../components/Header.astro";
 import Base from "../layouts/Base.astro";
 import Card from "../components/Card.astro";
+import { getOffres } from "../backend.mjs";
 
+const offres = await getOffres();
+
+/*
 const offres = [
     {
         adresse: "2821 Lake Sevilla, Palm Harbor, TX",
@@ -38,6 +42,7 @@ const offres = [
         imgUrl: "image3.png",
     },
 ];
+*/
 ---
 
 <html lang="en">
@@ -64,7 +69,8 @@ const offres = [
 
         <div x-data="{ showFavorites: false }">
             <button @click="showFavorites = !showFavorites">
-                <span x-show="showFavorites == false">Afficher les favoris</span>
+                <span x-show="showFavorites == false">Afficher les favoris</span
+                >
                 <span x-show="showFavorites == true">Afficher tout</span>
             </button>
 
