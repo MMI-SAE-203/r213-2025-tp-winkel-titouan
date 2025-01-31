@@ -1,5 +1,11 @@
 ---
+import Base from "../layouts/Base.astro";
+import { getOffres } from "../backend.mjs";
+
 const { ...offre } = Astro.props;
 ---
 
-<li>{offre.nomMaison}</li>
+<li>
+    <img src={offre.image_url} alt={offre.nomMaison} />
+    <h2>{offre.nomMaison}</h2>
+</li>;
