@@ -10,3 +10,9 @@ const { ...offre } = Astro.props;
     <h2>{offre.nom_maison}</h2>
 </li>
 <a href={`/offres/${offre.id}`}>Voir plus</a>
+
+<script>
+    //@ts-nocheck
+    import { setFavori } from "@src/backend.mjs";
+    window.setFavori = setFavori;
+</script>
